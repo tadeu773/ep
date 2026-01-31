@@ -21,3 +21,8 @@ def inicia_jogo(n_jogadores, pecas):
         'monte': monte,
         'mesa': []
     }
+def verifica_ganhador(jogadores):
+    for jogador in jogadores:
+        if len(jogadores[jogador]) == 0:
+            return jogador
+    return -1
