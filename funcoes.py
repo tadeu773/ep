@@ -31,3 +31,17 @@ def conta_pontos(pecas):
     for peca in pecas:
         total += peca[0] + peca[1]
     return total
+def posicoes_possiveis(mesa, pecas):
+    posicoes = []
+    if mesa == []:
+        for i in range(len(pecas)):
+            posicoes.append(i)
+        return posicoes
+    ponta_esq = mesa[0][0]
+    ponta_dir = mesa[-1][1]
+    for i in range(len(pecas)):
+        peca = pecas[i]
+        if peca[0] == ponta_esq or peca[1] == ponta_esq or \
+           peca[0] == ponta_dir or peca[1] == ponta_dir:
+            posicoes.append(i)
+    return posicoes
