@@ -105,3 +105,4 @@ while True:
             print(f"\nVENCEDOR: Jogador {vencedor}")
             break
     jogador_atual = (jogador_atual + 1) % n
+    
