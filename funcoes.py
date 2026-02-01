@@ -45,3 +45,19 @@ def posicoes_possiveis(mesa, pecas):
            peca[0] == ponta_dir or peca[1] == ponta_dir:
             posicoes.append(i)
     return posicoes
+def adiciona_na_mesa(peca, mesa):
+    if mesa == []:
+        return [peca]
+    esquerda = mesa[0][0]
+    direita = mesa[-1][1]
+    a, b = peca[0], peca[1]
+    if b == esquerda:
+        mesa.insert(0, peca)
+    elif a == esquerda:
+        mesa.insert(0, [b, a])
+    elif a == direita:
+        mesa.append(peca)
+    elif b == direita:
+        mesa.append([b, a])
+
+    return mesa
